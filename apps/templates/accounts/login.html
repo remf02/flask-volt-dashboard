@@ -18,14 +18,14 @@
                         <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                             <div class="text-center text-md-center mb-4 mt-md-0">
                                 <h1 class="mb-0 h3">
-                                    Flask Volt - Sign IN
+                                    Ultimas Milla  - Inciar Sesion
                                 </h1>
                                 <br />
                                 <p>
                                     {% if msg %}
                                         <span class="text-danger">{{ msg | safe }}</span>
                                     {% else %}
-                                        Add your credentials
+                                        Escsribe tus Credenciales
                                     {% endif %}                                     
                                 </p> 
                             </div>
@@ -35,7 +35,7 @@
 
                                 <!-- Form -->
                                 <div class="form-group mb-4">
-                                    <label for="email">Username</label>
+                                    <label for="email">Usuario</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1">
                                             <span class="fas fa-user-circle"></span>
@@ -47,7 +47,7 @@
                                 <div class="form-group">
                                     <!-- Form -->
                                     <div class="form-group mb-4">
-                                        <label for="password">Your Password</label>
+                                        <label for="password">Tu Contraseña</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon2">
                                                 <span class="fas fa-unlock-alt"></span>
@@ -60,7 +60,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="remember">
                                             <label class="form-check-label mb-0" for="remember">
-                                              Remember me
+                                              Recuerdame
                                             </label>
                                         </div>
                                         <div>
@@ -77,7 +77,7 @@
                             {% if config.SOCIAL_AUTH_GITHUB %}
                                 <div class="mt-3 mb-4 text-center">
                                     <span class="fw-normal">
-                                        Or login with
+                                        O Inciar Sesion con:
                                     </span>
                                 </div>
                                 <div class="d-flex justify-content-center my-4">

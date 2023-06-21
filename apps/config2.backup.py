@@ -18,7 +18,7 @@ class Config(object):
         SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))
 
     # Social AUTH context
-    SOCIAL_AUTH_GITHUB  = False 
+    SOCIAL_AUTH_GITHUB  = False
 
     GITHUB_ID      = os.getenv('GITHUB_ID'    , None)
     GITHUB_SECRET  = os.getenv('GITHUB_SECRET', None)
@@ -54,20 +54,17 @@ class Config(object):
             ) 
 
             USE_SQLITE  = False
-    
-        except Exception as e: 
+
+        except Exception as e:
 
             print('> Error: DBMS Exception: ' + str(e) )
             print('> Fallback to SQLite ')    
 
-    if USE_SQLITE:
+    #if USE_SQLITE:
 
         # This will create a file in <app> FOLDER
-          #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
-        # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
-         SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:admin@127.0.0.1:5432/flexus_ultimamilla'
-
-
+       # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
+        #SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:admin@127.0.0.1:5432/flexus_ultimamilla'
 
         
     

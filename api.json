@@ -1,0 +1,113 @@
+[
+    {
+      "name_tech": "Terminal A",
+      "terminal_id": 1,
+      "ports": [
+        {
+          "port_id": 1,
+          "client_longitud": 12.345,
+          "client_latitud": 67.890,
+          "client_name": "Cliente X",
+          "client_vat": "ABC123",
+          "client_address": "Calle Principal 123"
+        },
+        {
+          "port_id": 2,
+          "client_longitud": 23.456,
+          "client_latitud": 78.901,
+          "client_name": "Cliente Y",
+          "client_vat": "DEF456",
+          "client_address": "Avenida Secundaria 456"
+        }
+      ]
+    },
+    {
+      "name_tech": "Terminal B",
+      "terminal_id": 2,
+      "ports": [
+        {
+          "port_id": 1,
+          "client_longitud": 34.567,
+          "client_latitud": 89.012,
+          "client_name": "Cliente Z",
+          "client_vat": "GHI789",
+          "client_address": "Plaza Principal 789"
+        },
+        {
+          "port_id": 2,
+          "client_longitud": 45.678,
+          "client_latitud": 90.123,
+          "client_name": "Cliente W",
+          "client_vat": "JKL012",
+          "client_address": "Boulevard Central 012"
+        }
+      ]
+    },
+    {
+      "name_tech": "Terminal C",
+      "terminal_id": 3,
+      "ports": [
+        {
+          "port_id": 1,
+          "client_longitud": 56.789,
+          "client_latitud": 12.345,
+          "client_name": "Cliente V",
+          "client_vat": "MNO345",
+          "client_address": "Avenida Principal 345"
+        },
+        {
+          "port_id": 2,
+          "client_longitud": 67.890,
+          "client_latitud": 23.456,
+          "client_name": "Cliente U",
+          "client_vat": "PQR678",
+          "client_address": "Calle Secundaria 678"
+        }
+      ]
+    },
+    {
+      "name_tech": "Terminal D",
+      "terminal_id": 4,
+      "ports": [
+        {
+          "port_id": 1,
+          "client_longitud": 78.901,
+          "client_latitud": 34.567,
+          "client_name": "Cliente T",
+          "client_vat": "STU901",
+          "client_address": "Avenida Central 901"
+        },
+        {
+          "port_id": 2,
+          "client_longitud": 89.012,
+          "client_latitud": 45.678,
+          "client_name": "Cliente S",
+          "client_vat": "VWX234",
+          "client_address": "Plaza Secundaria 234"
+        }
+      ]
+    },
+    {
+      "name_tech": "Terminal E",
+      "terminal_id": 5,
+      "ports": [
+        {
+          "port_id": 1,
+          "client_longitud": 90.123,
+          "client_latitud": 56.789,
+          "client_name": "Cliente R",
+          "client_vat": "YZA567",
+          "client_address": "Boulevard Principal 567"
+        },
+        {
+          "port_id": 2,
+          "client_longitud": 01.234,
+          "client_latitud": 67.890,
+          "client_name": "Cliente Q",
+          "client_vat": "BCD890",
+          "client_address": "Avenida Secundaria 890"
+        }
+      ]
+    }
+  ]
+  
