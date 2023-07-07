@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Detalle de Orden {{ order.id }} {% endblock %}
+{% block title %} Detalle de Orden {{ order_id }} {% endblock %}
 
 
 {% block content %}
@@ -20,17 +20,51 @@
             </li>
             <li class="breadcrumb-item"><a href="/">Tablero</a></li>
             <li class="breadcrumb-item"><a href="/orders">Ordenes</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Orden {{ order.id }}</li>
+            <li class="breadcrumb-item active" aria-current="page">Orden {{ order_id }}</li>
         </ol>
     </nav>
+
+    <!--<div class="row">
+        <div class="col-12 mb-4">
+            <div class="card border-0 shadow components-section">
+                <div class="card-body">
+
+                    <div class="col-xl-6 mb-xl-0 mb-4">
+                        <div class="card bg-transparent shadow-xl">
+                        <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('{{ config.ASSETS_ROOT }}/img/curved-images/curved14.jpg');">
+                            <span class="mask bg-gradient-dark"></span>
+                            <div class="card-body position-relative z-index-1 p-3">
+                            <i class="fas fa-wifi text-white p-2"></i>
+                            <h5 class="text-white mt-4 mb-5 pb-2">4562&nbsp;&nbsp;&nbsp;1122&nbsp;&nbsp;&nbsp;4594&nbsp;&nbsp;&nbsp;7852</h5>
+                            <div class="d-flex">
+                                <div class="d-flex">
+                                <div class="me-4">
+                                    <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
+                                    <h6 class="text-white mb-0">Jack Peterson</h6>
+                                </div>
+                                <div>
+                                    <p class="text-white text-sm opacity-8 mb-0">Expires</p>
+                                    <h6 class="text-white mb-0">11/22</h6>
+                                </div>
+                                </div>
+                                <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
+                                <img class="w-60 mt-2" src="{{ config.ASSETS_ROOT }}/img/logos/mastercard.png" alt="logo">
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>  
+-->
+
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
-            <h1 class="h4">Forms</h1>
-            <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
-        </div>
-        <div>
-            <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components-forms/"
-                class="btn btn-outline-gray"><i class="far fa-question-circle me-1"></i> Forms Docs</a>
+            <h1 class="h4">Orden de Instalacion</h1>
+            <p class="mb-0">Indique la terminal, el puerto de la orden para su confirmacion de instalacion.</p>
         </div>
     </div>
 </div>
@@ -39,23 +73,118 @@
     <div class="col-12 mb-4">
         <div class="card border-0 shadow components-section">
             <div class="card-body">
-                <form action="/orders/{{ order.id }}" method="post">
+                <form action="/orders/{{ order_id }}" method="post">
+                    {{ form.hidden_tag() }}
+
                     <div class="row mb-4">
                         <div class="col-lg-4 col-sm-6">
                             <div class="mb-4">
                                 <label for="client-name">Cliente</label>
-                                <input type="text" class="form-control" id="client-name" value="{{ order.client_name }}"
+                                <input type="text" class="form-control" id="client-name" value="Nombre del cliente"
                                     disabled="true">
                             </div>
                             <div class="mb-4">
                                 <label for="client-vat">Cedula</label>
-                                <input type="text" class="form-control" id="client-name" value="{{ order.client_vat }}"
+                                <input type="text" class="form-control" id="client-name" value="123456789666"
                                     disabled="true">
                             </div>
+
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="terminal_id">{{ form.terminal_id.label }}</label>
+
+                                {{ form.terminal_id(class="form-select") }}
+
+                                {% if form.terminal_id.errors %}
+                                    {% for error in form.terminal_id.errors %}
+                                        <div class="invalid-feedback">
+                                            {{ error }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="port_id">Puerto</label>
+                                <select class="form-select {% if form.port_id.errors %} is-invalid {% endif %}"
+                                    id="port_id" name="port_id" aria-label="Default select example">
+                                    <option selected>Seleccione el puerto</option>
+                                    <option value="1">P01</option>
+                                    <option value="2">P02</option>
+
+                                </select>
+
+                                {% if form.port_id.errors %}
+                                    {% for error in form.port_id.errors %}
+                                        <div class="invalid-feedback">
+                                            {{ error }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+
+                            <h2 class="h5 mb-4">Elige al Menos 3 Fotos</h2>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <!-- Avatar -->
+                                    <img class="rounded avatar-xl"
+                                        src="{{ config.ASSETS_ROOT }}/img/team/profile-picture-3.jpg"
+                                        alt="change avatar">
+                                </div>
+                                <div class="file-field">
+                                    <div class="d-flex justify-content-xl-center ms-xl-3">
+                                        <div class="d-flex">
+                                            <svg class="icon text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                            <input type="file">
+                                            <div class="d-md-block text-left">
+                                                <div class="fw-normal text-dark mb-1">Elegir Imagenes</div>
+                                                <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <h2 class="h5 mb-4">Direccion del Cliente</h2>
+
+                                <div class="mapouter">
+                                    <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas"
+                                            src="https://maps.google.com/maps?q=Industria EddyMed&t=k&z=18&ie=UTF8&iwloc=&output=embed"
+                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+
+                                        </iframe><br>
+                                        <style>
+                                            .mapouter {
+                                                position: relative;
+                                                text-align: right;
+                                                height: 100%;
+                                                width: 100%;
+                                            }
+                                        </style>
+                                        <style>
+                                            .gmap_canvas {
+                                                overflow: hidden;
+                                                background: none !important;
+                                                height: 100%;
+                                                width: 100%;
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <button type="submit">Confirmar Instalacion</button>
+                        <button type="submit" class="btn btn-lg btn-primary">Confirmar Instalacion</button>
                     </div>
                 </form>
             </div>

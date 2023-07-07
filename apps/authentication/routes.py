@@ -75,29 +75,7 @@ def login_github():
 #     return render_template("orders.html", form=form, msg=msg, success=success)
 
 
-@blueprint.route("/api", methods=["POST"])
-def api():
-    if "file" not in request.files:
-        return "No se seleccionó ningún archivo", 400
 
-    file = request.files["file"]
-    if file.filename == "":
-        return "No se seleccionó ningún archivo", 400
-
-    if file:
-        data = file.read().decode("utf-8")  # Leer el archivo y Decodicficarlo
-        print("Contenido del archivo Json:")
-        print(data)
-        try:
-            json_data = json.loads(data)  # Convertir en un Objeto Python
-            return render_template("home/api.html", data=json_data)
-        except json.JSONDecodeError as e:
-            print("Error al cargar el archivo JSON:", str(e))
-            # Manejar el error de carga del Json Aqui
-
-        return render_template("home/api.html")
-
-    return "Tipo de archivo no válido. Se requiere un archivo JSON", 400
 
 
 @blueprint.route("/login", methods=["GET", "POST"])

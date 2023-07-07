@@ -1,6 +1,5 @@
 from apps import db
 
-
 class Order(db.Model):
     __tablename__ = 'Orders'
     id =                db.Column(db.Integer, primary_key=True)
@@ -38,3 +37,5 @@ class Order(db.Model):
     @staticmethod
     def all():
         return []
+    
+    

@@ -1,0 +1,48 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "type": "text",
+      "version": 778,
+      "versionNonce": 1907072834,
+      "isDeleted": false,
+      "id": "M13dnoW_vZoByP_ltKDi4",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 549,
+      "y": 220,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 1059.208984375,
+      "height": 925,
+      "seed": 1577544798,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1688138678895,
+      "link": null,
+      "locked": false,
+      "fontSize": 20,
+      "fontFamily": 1,
+      "text": "popular-sync-pyament-services / main.py   { el archivo principal }\npopular-sync-pyament-services / core / settings.py    { pydantic + pydenv \".env\" }\npopular-sync-pyament-services / services / odoo_service.py    { un objeto que se encarga de la comunicaicon con odoo }\n\n\nclass Payment:\n    ....\n\n\nclass PopularSyncPayments\n    time_interval = 5000    #  .env\n\n    def __init__(self):\n        self.odoo_service = OdooService()\n\n    def run(self);\n        pass\n\n    def send_payment_to_odoo(self, data):    # Santos\n        pass\n\n    def read_xml(self):\n        ...\n\n    def xml_to_py(self):\n        ...\n\n\n\ndef main():\n    sync = PopularSyncPaymetns()\n    sync.run()\n\n\n\nif __name__ == \"__main__\":\n    main()",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "popular-sync-pyament-services / main.py   { el archivo principal }\npopular-sync-pyament-services / core / settings.py    { pydantic + pydenv \".env\" }\npopular-sync-pyament-services / services / odoo_service.py    { un objeto que se encarga de la comunicaicon con odoo }\n\n\nclass Payment:\n    ....\n\n\nclass PopularSyncPayments\n    time_interval = 5000    #  .env\n\n    def __init__(self):\n        self.odoo_service = OdooService()\n\n    def run(self);\n        pass\n\n    def send_payment_to_odoo(self, data):    # Santos\n        pass\n\n    def read_xml(self):\n        ...\n\n    def xml_to_py(self):\n        ...\n\n\n\ndef main():\n    sync = PopularSyncPaymetns()\n    sync.run()\n\n\n\nif __name__ == \"__main__\":\n    main()",
+      "lineHeight": 1.25,
+      "baseline": 918
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
