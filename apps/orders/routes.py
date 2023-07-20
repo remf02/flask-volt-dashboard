@@ -35,8 +35,6 @@ def detail(id):
 
 
 
-
-
 @blueprint.route("/api", methods=["POST"])
 def api():
     if "file" not in request.files:

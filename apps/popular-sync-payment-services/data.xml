@@ -1,5 +1,22 @@
-<user>
-  <name>John Doe</name>
-  <age>30</age>
-  <email>john.doe@example.com</email>
-</user> 
+<?xml version="1.0" encoding="utf-8"?>
+<DetalleConsulta version="1.0">
+    <CodigoMensaje>100</CodigoMensaje>
+    <DescripcionMensaje>Numero de Referencia Valido</DescripcionMensaje>
+    <NumeroReferencia>3950002114</NumeroReferencia>
+    <TipoReferencia>Boleto Aereo</TipoReferencia>
+    <IDDocumento>001-1131298-4</IDDocumento><!-- Guiones Opcionales -->
+    <NombreCliente>Juan Paco Pedro de la Mar</NombreCliente>
+    <MontoImpuesto>100</MontoImpuesto>
+    <MontoSaldo>1000</MontoSaldo>
+    <MontoVencido></MontoVencido>
+    <MontoTotal>1240</MontoTotal>
+    <Moneda>DOP</Moneda>
+    <Fecha>2007-04-19</Fecha>
+    <Detalles>
+        <Detalle ID="001" Descripcion="Impuesto de Salida" Valor="50" />
+        <Detalle ID="002" Descripcion="Trato especial" Valor="65" />
+        <Detalle ID="003" Descripcion="Recargo" Valor="15" />
+        <Detalle ID="098" Descripcion="Comentario" Valor="Gracias por utilizar nuestros Servicios" />
+        <Detalle ID="999" Descripcion="Otros Cargos" Valor="10" />
+    </Detalles>
+</DetalleConsulta>
